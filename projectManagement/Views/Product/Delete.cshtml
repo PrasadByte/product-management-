@@ -1,0 +1,11 @@
+﻿@model projectManagement.Models.Product
+
+<h4>Are you sure you want to delete product @Model.Name?</h4>
+<p>This action cannot be undone.</p>
+<form asp-action="Delete" asp-controller="Product" method="post">
+    <input asp-for="Id" type="hidden" />
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </div>
+</form>
+<a asp-action="Index" asp-controller="Product" class="btn btn-outline-primary">Back to List</a>

@@ -1,0 +1,49 @@
+﻿<h1>Product</h1>
+<p>
+    <a class="btn btn-success" asp-controller="Product" asp-action="Create">Create a new product</a >
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Name
+            </th>
+            <th>
+               Price
+            </th>
+            <th>
+               Description
+            </th>
+            <th>
+                Stock
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    @product.Price
+                </td>
+                <td>
+                    @product.Description
+                </td>
+                <td>
+                    @product.Stock
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="product" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                    <a class="btn btn-danger" asp-controller="product" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
