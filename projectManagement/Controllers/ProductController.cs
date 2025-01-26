@@ -10,7 +10,7 @@ namespace projectManagement.Controllers
         private readonly ProductDbContext _Context;
         public ProductController(ProductDbContext context)
         {
-            _Context = context;
+            _Context = context; 
         }
         public IActionResult Index()
         {
@@ -65,15 +65,7 @@ namespace projectManagement.Controllers
             _Context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult DeleteConform(int id)
-        {
-            var product = _Context.Products.Find(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            return View(product);
-        }
+      
 
     }
 }
